@@ -83,6 +83,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Educaçao"/>
+                                <connections>
+                                    <segue destination="Pgw-0F-mP9" kind="show" identifier="SegueEducação" id="902-dX-ufh"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G8W-aD-ftk">
                                 <rect key="frame" x="16" y="377" width="343" height="38"/>
@@ -94,6 +97,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Transporte"/>
+                                <connections>
+                                    <segue destination="Pgw-0F-mP9" kind="show" identifier="SegueTransporte" id="wzN-j9-I61"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kkd-IB-IZL">
                                 <rect key="frame" x="16" y="279" width="343" height="41"/>
@@ -106,7 +112,7 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Saúde"/>
                                 <connections>
-                                    <segue destination="Pgw-0F-mP9" kind="show" id="Wav-EZ-wuM"/>
+                                    <segue destination="Pgw-0F-mP9" kind="show" identifier="segueSaude" id="Wav-EZ-wuM"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -145,42 +151,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="efB-fp-xf3">
-                                <rect key="frame" x="20" y="92" width="353.5" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="qVT-JE-uY7">
-                                        <rect key="frame" x="0.0" y="0.0" width="144" height="128"/>
-                                        <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gJX-WZ-Mzx">
-                                                <rect key="frame" x="0.0" y="0.0" width="144" height="128"/>
-                                            </imageView>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uxm-ik-Mwl">
-                                        <rect key="frame" x="144" y="0.0" width="209.5" height="128"/>
-                                        <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="5aH-fW-gjJ">
-                                                <rect key="frame" x="0.0" y="0.0" width="209.5" height="128"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Estado" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gg2-1v-Fg4">
-                                                        <rect key="frame" x="0.0" y="0.0" width="209.5" height="107.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Descrição  breve do estado" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hz6-MA-dA5">
-                                                        <rect key="frame" x="0.0" y="107.5" width="209.5" height="20.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                            </stackView>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                            </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Selecione um estado:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ic1-HT-fnu">
                                 <rect key="frame" x="16" y="541" width="191" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -192,10 +162,6 @@
                                 <rect key="frame" x="0.0" y="569" width="375" height="49"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </pickerView>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="W2t-LA-Gbx">
-                                <rect key="frame" x="20" y="228" width="339" height="305"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -209,12 +175,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Set-rM-hO7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3644" y="-901.79910044977521"/>
+            <point key="canvasLocation" x="3751" y="-349"/>
         </scene>
-        <!--Voto Saúde-->
+        <!--Avaliação - Saúde-->
         <scene sceneID="yrI-Wq-IwC">
             <objects>
-                <viewController title="Voto Saúde" id="ctb-Rz-aRK" sceneMemberID="viewController">
+                <viewController title="Avaliação - Saúde" id="ctb-Rz-aRK" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zBs-QS-N3B"/>
                         <viewControllerLayoutGuide type="bottom" id="FeN-ec-Whp"/>
@@ -222,12 +188,179 @@
                     <view key="view" contentMode="scaleToFill" id="xt4-pD-XJd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GLI-SP-QWn">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="nm6-Rt-a24">
+                                        <rect key="frame" x="-3" y="-68" width="378" height="558"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W9g-wA-hli" userLabel="Question">
+                                                <rect key="frame" x="0.0" y="0.0" width="378" height="58"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="na sua opinião,  o quanto o governo ajuda as instituições de saúde? " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WDZ-zb-n6i">
+                                                        <rect key="frame" x="8" y="0.0" width="362" height="58"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7E2-gu-bIr" userLabel="StarButton">
+                                                <rect key="frame" x="0.0" y="58" width="378" height="50"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uet-F7-Oih" userLabel="StarButton" customClass="RatingControl" customModule="IEB" customModuleProvider="target">
+                                                        <rect key="frame" x="76" y="8" width="226" height="42"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    </stackView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n4n-pT-qxn" userLabel="Question">
+                                                <rect key="frame" x="0.0" y="108" width="378" height="50"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Na sua opinião, como é o atendimento da instituição de saúde ? (Médicos, Atendentes e prestadores de serviços)." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Og0-9k-K4z">
+                                                        <rect key="frame" x="8" y="0.0" width="362" height="58"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e3n-mh-eXO" userLabel="StarButton">
+                                                <rect key="frame" x="0.0" y="158" width="378" height="50"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ebp-Yn-ZLh" userLabel="StarButton" customClass="RatingControl" customModule="IEB" customModuleProvider="target">
+                                                        <rect key="frame" x="76" y="8" width="226" height="42"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    </stackView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4qF-iQ-K3o" userLabel="Question">
+                                                <rect key="frame" x="0.0" y="208" width="378" height="50"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="na sua opinião, como é a infraestrutura da instituição de saúde ?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZfQ-YG-YR2">
+                                                        <rect key="frame" x="8" y="0.0" width="362" height="58"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rrW-b6-YHe" userLabel="StarButton">
+                                                <rect key="frame" x="0.0" y="258" width="378" height="50"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vSZ-49-RcV" userLabel="StarButton" customClass="RatingControl" customModule="IEB" customModuleProvider="target">
+                                                        <rect key="frame" x="76" y="8" width="226" height="42"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    </stackView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oC4-Nx-kW7" userLabel="Question">
+                                                <rect key="frame" x="0.0" y="308" width="378" height="50"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Na sua opinião, os Médicos são capacitados ?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OCH-gc-5qC">
+                                                        <rect key="frame" x="8" y="0.0" width="362" height="58"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ow1-g0-ivV" userLabel="StarButton">
+                                                <rect key="frame" x="0.0" y="358" width="378" height="50"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="udq-24-seX" userLabel="StarButton" customClass="RatingControl" customModule="IEB" customModuleProvider="target">
+                                                        <rect key="frame" x="76" y="8" width="226" height="42"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    </stackView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B4O-LE-NWC" userLabel="Question">
+                                                <rect key="frame" x="0.0" y="408" width="378" height="50"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Na sua opinião, a instituição disponibiliza remédios ?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ugB-7h-d3t">
+                                                        <rect key="frame" x="8" y="0.0" width="362" height="58"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cAk-hE-Er7" userLabel="StarButton">
+                                                <rect key="frame" x="0.0" y="458" width="378" height="50"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ryl-qh-4y6" userLabel="StarButton" customClass="RatingControl" customModule="IEB" customModuleProvider="target">
+                                                        <rect key="frame" x="76" y="8" width="226" height="42"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    </stackView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="McB-Uo-IRO">
+                                                <rect key="frame" x="0.0" y="508" width="378" height="50"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pNr-5z-meB">
+                                                        <rect key="frame" x="0.0" y="36" width="378" height="39"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <color key="backgroundColor" red="0.16918168807594525" green="0.42099904587127701" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <state key="normal" title="Enviar Analise...">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="n4n-pT-qxn" firstAttribute="top" secondItem="nm6-Rt-a24" secondAttribute="top" constant="108" id="1gT-85-a3Y"/>
+                                            <constraint firstItem="4qF-iQ-K3o" firstAttribute="top" secondItem="nm6-Rt-a24" secondAttribute="top" constant="208" id="3fK-c8-P9z"/>
+                                            <constraint firstItem="e3n-mh-eXO" firstAttribute="top" secondItem="nm6-Rt-a24" secondAttribute="top" constant="158" id="GsO-bK-V9M"/>
+                                            <constraint firstItem="Ow1-g0-ivV" firstAttribute="top" secondItem="nm6-Rt-a24" secondAttribute="top" constant="358" id="ITy-m5-XD8"/>
+                                            <constraint firstItem="cAk-hE-Er7" firstAttribute="top" secondItem="nm6-Rt-a24" secondAttribute="top" constant="458" id="JaU-ft-kxF"/>
+                                            <constraint firstItem="McB-Uo-IRO" firstAttribute="top" secondItem="nm6-Rt-a24" secondAttribute="top" constant="508" id="PGs-eV-AEv"/>
+                                            <constraint firstItem="7E2-gu-bIr" firstAttribute="top" secondItem="nm6-Rt-a24" secondAttribute="top" constant="58" id="SNZ-Ra-k4P"/>
+                                            <constraint firstAttribute="height" constant="558" id="VmU-xK-puO"/>
+                                            <constraint firstItem="oC4-Nx-kW7" firstAttribute="top" secondItem="nm6-Rt-a24" secondAttribute="top" constant="308" id="fQw-9s-URM"/>
+                                            <constraint firstAttribute="width" constant="378" id="h1c-jJ-S6p"/>
+                                            <constraint firstItem="B4O-LE-NWC" firstAttribute="top" secondItem="nm6-Rt-a24" secondAttribute="top" constant="408" id="prg-gV-GhQ"/>
+                                            <constraint firstItem="rrW-b6-YHe" firstAttribute="top" secondItem="nm6-Rt-a24" secondAttribute="top" constant="258" id="wZX-R6-tWQ"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="nm6-Rt-a24" firstAttribute="top" secondItem="GLI-SP-QWn" secondAttribute="top" constant="-4" id="1Jn-eb-W0H"/>
+                                    <constraint firstItem="nm6-Rt-a24" firstAttribute="leading" secondItem="GLI-SP-QWn" secondAttribute="leading" constant="-3" id="S0c-BN-hQm"/>
+                                    <constraint firstAttribute="bottom" secondItem="nm6-Rt-a24" secondAttribute="bottom" id="va7-iq-aS3"/>
+                                    <constraint firstAttribute="trailing" secondItem="nm6-Rt-a24" secondAttribute="trailing" id="yIh-vL-LnD"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="GLI-SP-QWn" firstAttribute="bottom" secondItem="FeN-ec-Whp" secondAttribute="top" id="Ti3-h6-wvN"/>
+                            <constraint firstAttribute="trailing" secondItem="GLI-SP-QWn" secondAttribute="trailing" id="UrU-CN-i1q"/>
+                            <constraint firstItem="GLI-SP-QWn" firstAttribute="top" secondItem="zBs-QS-N3B" secondAttribute="bottom" id="dXG-zQ-fx3"/>
+                            <constraint firstItem="GLI-SP-QWn" firstAttribute="leading" secondItem="xt4-pD-XJd" secondAttribute="leading" id="eIO-qT-svM"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mwy-2A-Ta9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4545" y="-902"/>
+            <point key="canvasLocation" x="4544.8000000000002" y="-902.69865067466276"/>
         </scene>
         <!--Econômico-->
         <scene sceneID="DbF-gK-Vxb">
@@ -325,4 +458,7 @@
             <point key="canvasLocation" x="1864.8" y="1176.1619190404799"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="wzN-j9-I61"/>
+    </inferredMetricsTieBreakers>
 </document>

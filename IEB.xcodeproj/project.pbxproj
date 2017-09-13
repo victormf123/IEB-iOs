@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F3448E51F68E6E600E3F383 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3448E41F68E6E600E3F383 /* RatingControl.swift */; };
 		2F356C221F679CCA00EFE0D3 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F356C211F679CCA00EFE0D3 /* CoreLocation.framework */; };
 		2FCA844C1F67707E001593D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCA844B1F67707E001593D3 /* AppDelegate.swift */; };
 		2FCA844E1F67707E001593D3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCA844D1F67707E001593D3 /* ViewController.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2F3448E41F68E6E600E3F383 /* RatingControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 		2F356C211F679CCA00EFE0D3 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		2FCA84481F67707E001593D3 /* IEB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IEB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FCA844B1F67707E001593D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +81,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F3448E61F68F73A00E3F383 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 		2F356C201F679CCA00EFE0D3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +99,7 @@
 		2F356C231F679FEF00EFE0D3 /* commons */ = {
 			isa = PBXGroup;
 			children = (
+				2F3448E41F68E6E600E3F383 /* RatingControl.swift */,
 			);
 			name = commons;
 			sourceTree = "<group>";
@@ -118,6 +128,7 @@
 		2FCA844A1F67707E001593D3 /* IEB */ = {
 			isa = PBXGroup;
 			children = (
+				2F3448E61F68F73A00E3F383 /* Controllers */,
 				2F356C231F679FEF00EFE0D3 /* commons */,
 				2FCA844B1F67707E001593D3 /* AppDelegate.swift */,
 				2FCA844D1F67707E001593D3 /* ViewController.swift */,
@@ -285,6 +296,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F3448E51F68E6E600E3F383 /* RatingControl.swift in Sources */,
 				2FCA84541F67707E001593D3 /* IEB.xcdatamodeld in Sources */,
 				2FCA844E1F67707E001593D3 /* ViewController.swift in Sources */,
 				2FCA844C1F67707E001593D3 /* AppDelegate.swift in Sources */,
