@@ -64,7 +64,7 @@
         <!--Social-->
         <scene sceneID="mE3-b0-ebZ">
             <objects>
-                <viewController id="Prz-oR-tN9" sceneMemberID="viewController">
+                <viewController id="Prz-oR-tN9" customClass="SocialViewController" customModule="IEB" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pgZ-oV-yM2"/>
                         <viewControllerLayoutGuide type="bottom" id="yYq-I5-78x"/>
@@ -84,7 +84,7 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Educaçao"/>
                                 <connections>
-                                    <segue destination="Pgw-0F-mP9" kind="show" identifier="SegueEducação" id="902-dX-ufh"/>
+                                    <segue destination="Pgw-0F-mP9" kind="show" identifier="segueEducacao" id="902-dX-ufh"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G8W-aD-ftk">
@@ -98,7 +98,7 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Transporte"/>
                                 <connections>
-                                    <segue destination="Pgw-0F-mP9" kind="show" identifier="SegueTransporte" id="wzN-j9-I61"/>
+                                    <segue destination="Pgw-0F-mP9" kind="show" identifier="segueTransporte" id="wzN-j9-I61"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kkd-IB-IZL">
@@ -142,7 +142,7 @@
         <!--Educação-->
         <scene sceneID="3DW-OE-9ix">
             <objects>
-                <viewController title="Educação" id="Pgw-0F-mP9" sceneMemberID="viewController">
+                <viewController title="Educação" id="Pgw-0F-mP9" customClass="DetalhesSocialViewController" customModule="IEB" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1cg-w4-OVb"/>
                         <viewControllerLayoutGuide type="bottom" id="jOv-ev-83G"/>
@@ -168,7 +168,7 @@
                     <navigationItem key="navigationItem" title="Saúde" id="Lbx-RH-Uoz">
                         <barButtonItem key="rightBarButtonItem" systemItem="compose" id="tAP-7R-lhN">
                             <connections>
-                                <segue destination="ctb-Rz-aRK" kind="show" id="bhm-Hb-wRr"/>
+                                <segue destination="ctb-Rz-aRK" kind="show" identifier="avaliacao" id="bhm-Hb-wRr"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -180,7 +180,7 @@
         <!--Avaliação - Saúde-->
         <scene sceneID="yrI-Wq-IwC">
             <objects>
-                <viewController title="Avaliação - Saúde" id="ctb-Rz-aRK" sceneMemberID="viewController">
+                <viewController title="Avaliação - Saúde" id="ctb-Rz-aRK" customClass="QuestionsViewController" customModule="IEB" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zBs-QS-N3B"/>
                         <viewControllerLayoutGuide type="bottom" id="FeN-ec-Whp"/>
@@ -357,10 +357,22 @@
                             <constraint firstItem="GLI-SP-QWn" firstAttribute="leading" secondItem="xt4-pD-XJd" secondAttribute="leading" id="eIO-qT-svM"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="p001" destination="WDZ-zb-n6i" id="Hjw-50-hGu"/>
+                        <outlet property="p002" destination="Og0-9k-K4z" id="JEb-fx-6M4"/>
+                        <outlet property="p003" destination="ZfQ-YG-YR2" id="VGG-to-Vny"/>
+                        <outlet property="p004" destination="OCH-gc-5qC" id="6S0-ax-Ohy"/>
+                        <outlet property="p005" destination="ugB-7h-d3t" id="x0s-k2-AVG"/>
+                        <outlet property="r001" destination="Uet-F7-Oih" id="YKb-R5-BFw"/>
+                        <outlet property="r002" destination="ebp-Yn-ZLh" id="Jlr-uX-mEo"/>
+                        <outlet property="r003" destination="vSZ-49-RcV" id="oGi-Cr-dSg"/>
+                        <outlet property="r004" destination="udq-24-seX" id="fb4-Kj-GXA"/>
+                        <outlet property="r005" destination="Ryl-qh-4y6" id="zMD-Af-krD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mwy-2A-Ta9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4544.8000000000002" y="-902.69865067466276"/>
+            <point key="canvasLocation" x="4609" y="-349"/>
         </scene>
         <!--Econômico-->
         <scene sceneID="DbF-gK-Vxb">
@@ -459,6 +471,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="wzN-j9-I61"/>
+        <segue reference="902-dX-ufh"/>
     </inferredMetricsTieBreakers>
 </document>
