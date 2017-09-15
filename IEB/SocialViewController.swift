@@ -24,13 +24,13 @@ class SocialViewController: UIViewController {
         let viewControllerDestino = segue.destination as! DetalhesSocialViewController
         
         if segue.identifier == "segueEducacao"{
-            viewControllerDestino.objeto = Cenario(titulo: "Educação", tituloAvaliacao: "Avaliação - Educação", cenario: "educacao", entityName: "EducacaoRespostas")
+            viewControllerDestino.objeto = Cenario(titulo: "Educação", tituloAvaliacao: "Avaliação - Educação", cenario: "educacao", entityName: "EducacaoRespostas", user: "")
         }
         if segue.identifier == "segueTransporte"{
-            viewControllerDestino.objeto = Cenario(titulo: "Transporte", tituloAvaliacao: "Avaliação - Transporte", cenario: "transporte", entityName: "TransporteRespostas")
+            viewControllerDestino.objeto = Cenario(titulo: "Transporte", tituloAvaliacao: "Avaliação - Transporte", cenario: "transporte", entityName: "TransporteRespostas", user: "")
         }
         if segue.identifier == "segueSaude"{
-             viewControllerDestino.objeto = Cenario(titulo: "Saúde", tituloAvaliacao: "Avaliação - Saúde", cenario: "saude", entityName: "SaudeRespostas")
+             viewControllerDestino.objeto = Cenario(titulo: "Saúde", tituloAvaliacao: "Avaliação - Saúde", cenario: "saude", entityName: "SaudeRespostas", user: "")
         }
     }
     

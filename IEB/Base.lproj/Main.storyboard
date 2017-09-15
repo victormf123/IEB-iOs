@@ -13,7 +13,7 @@
         <!--View Controller-->
         <scene sceneID="wNN-ML-fl9">
             <objects>
-                <viewController id="NFJ-BE-DVD" sceneMemberID="viewController">
+                <viewController id="NFJ-BE-DVD" customClass="ViewController" customModule="IEB" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JlT-fd-yKr"/>
                         <viewControllerLayoutGuide type="bottom" id="ZBQ-Yb-WQy"/>
@@ -151,19 +151,81 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Selecione um estado:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ic1-HT-fnu">
-                                <rect key="frame" x="16" y="541" width="191" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7i4-21-oed">
-                                <rect key="frame" x="0.0" y="569" width="375" height="49"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            </pickerView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="8zi-TN-TDR">
+                                <rect key="frame" x="0.0" y="64" width="378" height="530"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z9n-mb-3NP">
+                                        <rect key="frame" x="0.0" y="0.0" width="378" height="128"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ctw-Ma-0Dk">
+                                                <rect key="frame" x="0.0" y="0.0" width="138" height="128"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="21Y-a9-Efx">
+                                                <rect key="frame" x="138" y="0.0" width="240" height="128"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="neV-jt-gI7">
+                                                        <rect key="frame" x="-10" y="0.0" width="240" height="125"/>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="miH-mi-wlY">
+                                                                <rect key="frame" x="0.0" y="0.0" width="240" height="50"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Estudo" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2DN-6I-aj5">
+                                                                        <rect key="frame" x="8" y="8" width="232" height="34"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NPG-Lp-ac3">
+                                                                <rect key="frame" x="0.0" y="50" width="240" height="75"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </view>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="NPG-Lp-ac3" firstAttribute="top" secondItem="neV-jt-gI7" secondAttribute="top" constant="50" id="Fn8-9A-DAh"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstItem="neV-jt-gI7" firstAttribute="top" secondItem="21Y-a9-Efx" secondAttribute="top" id="4Ba-Vp-0TF"/>
+                                                    <constraint firstAttribute="bottom" secondItem="neV-jt-gI7" secondAttribute="bottom" constant="3" id="GpE-yj-eAv"/>
+                                                    <constraint firstAttribute="trailing" secondItem="neV-jt-gI7" secondAttribute="trailing" constant="10" id="p1n-91-fOg"/>
+                                                    <constraint firstItem="neV-jt-gI7" firstAttribute="leading" secondItem="21Y-a9-Efx" secondAttribute="leading" constant="-10" id="zcM-iI-xi1"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="21Y-a9-Efx" firstAttribute="leading" secondItem="Z9n-mb-3NP" secondAttribute="leading" constant="138" id="vOj-b9-Pfa"/>
+                                        </constraints>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Luc-lf-Edp">
+                                        <rect key="frame" x="0.0" y="128" width="378" height="402"/>
+                                        <subviews>
+                                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uW8-RZ-Ml8">
+                                                <rect key="frame" x="0.0" y="8" width="380" height="414"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </mapView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Luc-lf-Edp" firstAttribute="top" secondItem="8zi-TN-TDR" secondAttribute="top" constant="128" id="Dz7-4f-BhM"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8zi-TN-TDR" firstAttribute="top" secondItem="1cg-w4-OVb" secondAttribute="bottom" id="BYO-Hw-6jD"/>
+                            <constraint firstItem="jOv-ev-83G" firstAttribute="top" secondItem="8zi-TN-TDR" secondAttribute="bottom" constant="24" id="Ey9-cp-hlS"/>
+                            <constraint firstItem="8zi-TN-TDR" firstAttribute="leading" secondItem="vzH-S7-OZw" secondAttribute="leading" id="icf-0F-1d6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8zi-TN-TDR" secondAttribute="trailing" constant="-19" id="lOI-Gj-CRr"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Saúde" id="Lbx-RH-Uoz">
                         <barButtonItem key="rightBarButtonItem" systemItem="compose" id="tAP-7R-lhN">
@@ -172,10 +234,14 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="labelEstado" destination="2DN-6I-aj5" id="jDn-Wz-pst"/>
+                        <outlet property="mapa" destination="uW8-RZ-Ml8" id="bIW-Fb-edy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Set-rM-hO7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3751" y="-349"/>
+            <point key="canvasLocation" x="3749.5999999999999" y="-349.47526236881561"/>
         </scene>
         <!--Avaliação - Saúde-->
         <scene sceneID="yrI-Wq-IwC">
@@ -421,7 +487,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="X8T-34-Qhc" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Economico" id="fzo-fV-XmJ"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="2Qm-X8-AEN">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2Qm-X8-AEN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -440,7 +506,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="n3Z-0z-LR3" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Social" id="5HC-gK-oh3"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="I2b-qA-m21">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="I2b-qA-m21">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -459,7 +525,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qDk-YC-eLN" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Politico" id="4qC-br-xdF"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ULa-KY-L0Z">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ULa-KY-L0Z">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

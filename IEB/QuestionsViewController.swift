@@ -65,13 +65,29 @@ class QuestionsViewController: UIViewController {
             let data = formatacaoData.string(from: Date())
         
             let resposta = NSEntityDescription.insertNewObject(forEntityName: self.objeto.entityName, into: context)
+        
             resposta.setValue(data, forKey: "data")
-            resposta.setValue(r001.rating, forKey: "r001")
-            resposta.setValue(r002.rating, forKey: "r002")
-            resposta.setValue(r003.rating, forKey: "r003")
-            resposta.setValue(r004.rating, forKey: "r004")
-            resposta.setValue(r005.rating, forKey: "r005")
-            
+            resposta.setValue(self.r001.rating, forKey: "r001")
+            resposta.setValue(self.r002.rating, forKey: "r002")
+            resposta.setValue(self.r003.rating, forKey: "r003")
+            resposta.setValue(self.r004.rating, forKey: "r004")
+            resposta.setValue(self.r005.rating, forKey: "r005")
+            /*
+                Salvando Respostas no Firebase
+            */
+        
+            let db = Database.database().reference()
+        
+            let respostas = db.child("Respostas")
+            let usuarioResposta = respostas.child(self.objeto.user)
+            let etityResposta = usuarioResposta.child(self.objeto.entityName)
+            etityResposta.child("data").setValue(data)
+            etityResposta.child("r001").setValue(self.r001.rating)
+            etityResposta.child("r002").setValue(self.r002.rating)
+            etityResposta.child("r003").setValue(self.r003.rating)
+            etityResposta.child("r004").setValue(self.r004.rating)
+            etityResposta.child("r005").setValue(self.r005.rating)
+        
             do {
                 try context.save()
                 let sucessoAlertController = AlertaFactory(titulo:"Obrigado!", mensagem:"Muito obrigado por compartilhar a sua Avaliação!", style: UIAlertControllerStyle.alert)
