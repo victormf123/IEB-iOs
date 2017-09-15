@@ -16,11 +16,13 @@ class Cenario: AnyObject{
     var Perguntas:[String] = []
     var Respostas:[Int] = []
     var cenario:String!
+    var entityName:String!
     
-    init(titulo: String, tituloAvaliacao:String, cenario:String ){
+    init(titulo: String, tituloAvaliacao:String, cenario:String, entityName:String ){
         self.Titulo = titulo
         self.TituloAvaliacao = tituloAvaliacao
         self.cenario = cenario
+        self.entityName = entityName
     }
     
     func setPerguntas(perguntas: [String]){

@@ -320,6 +320,9 @@
                                                         <state key="normal" title="Enviar Analise...">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="enviarVoto:" destination="ctb-Rz-aRK" eventType="touchUpInside" id="OII-1x-83y"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -418,7 +421,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="X8T-34-Qhc" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Economico" id="fzo-fV-XmJ"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2Qm-X8-AEN">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="2Qm-X8-AEN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -437,7 +440,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="n3Z-0z-LR3" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Social" id="5HC-gK-oh3"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="I2b-qA-m21">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="I2b-qA-m21">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -456,7 +459,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qDk-YC-eLN" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Politico" id="4qC-br-xdF"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ULa-KY-L0Z">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ULa-KY-L0Z">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -471,6 +474,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="902-dX-ufh"/>
+        <segue reference="wzN-j9-I61"/>
     </inferredMetricsTieBreakers>
 </document>

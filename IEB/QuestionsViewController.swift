@@ -8,10 +8,13 @@
 
 import UIKit
 import FirebaseDatabase
+import CoreData
 
 class QuestionsViewController: UIViewController {
     
     var objeto:Cenario!
+    
+    var respostasRecuperadas: [NSManagedObject] = []
     
     @IBOutlet weak var p001: UILabel!
     @IBOutlet weak var p002: UILabel!
@@ -26,9 +29,122 @@ class QuestionsViewController: UIViewController {
     @IBOutlet weak var r004: RatingControl!
     @IBOutlet weak var r005: RatingControl!
     
+    @IBAction func enviarVoto(_ sender: Any) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        if self.verificarSeTemResposta(context: context){
+            
+            let alertController = UIAlertController(title: "Atenção!", message: "Você já Realizou a avaliação, espere ate o proximo ciclo", preferredStyle: UIAlertControllerStyle.alert)
+            
+            let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default){ (UIAlertAction) in
+                
+                if let navigation = self.navigationController {
+                    navigation.popViewController(animated: true)
+                }
+            }
+            
+            alertController.addAction(okAction)
+            present(alertController, animated: true, completion:{() in
+                
+            })
+        }else{
+            self.SalvarDadosCoreData(context: context)
+        }
+        
+    
+    }
+    
+    private func SalvarDadosCoreData(context: NSManagedObjectContext){
+            /*
+             Salvando dados no CoreData
+             
+             */
+            let formatacaoData = DateFormatter()
+                formatacaoData.dateFormat = "dd/MM/yyyy hh:mm:ss"
+            let data = formatacaoData.string(from: Date())
+        
+            let resposta = NSEntityDescription.insertNewObject(forEntityName: self.objeto.entityName, into: context)
+            resposta.setValue(data, forKey: "data")
+            resposta.setValue(r001.rating, forKey: "r001")
+            resposta.setValue(r002.rating, forKey: "r002")
+            resposta.setValue(r003.rating, forKey: "r003")
+            resposta.setValue(r004.rating, forKey: "r004")
+            resposta.setValue(r005.rating, forKey: "r005")
+            
+            do {
+                try context.save()
+                let sucessoAlertController = AlertaFactory(titulo:"Obrigado!", mensagem:"Muito obrigado por compartilhar a sua Avaliação!", style: UIAlertControllerStyle.alert)
+                present(sucessoAlertController.alerta, animated: true, completion: {() in
+                    if let navigation = self.navigationController {
+                        navigation.popViewController(animated: true)
+                    }
+                })
+                
+                
+            } catch {
+                let erroAlertController = AlertaFactory(titulo:"Atenção!", mensagem:"Erro ao salvar dados", style: UIAlertControllerStyle.alert)
+                present(erroAlertController.alerta, animated: true, completion: nil)
+            }
+        
+    }
+    
+    private func verificarSeTemResposta (context: NSManagedObjectContext) -> Bool {
+        
+        let requisicao = NSFetchRequest<NSFetchRequestResult>(entityName: self.objeto.entityName)
+        do {
+            let respostasCoreData = try context.fetch(requisicao)
+            self.respostasRecuperadas = respostasCoreData as! [NSManagedObject]
+            if respostasRecuperadas.count > 0{
+                return true
+            }else{
+                return false
+            }
+        } catch {
+            let erroAlertController = AlertaFactory(titulo:"Atenção!", mensagem:"Erro ao recuperar dados", style: UIAlertControllerStyle.alert)
+            present(erroAlertController.alerta, animated: true, completion: nil)
+            return false
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        if self.verificarSeTemResposta(context: context){
+            
+            let requisicao = NSFetchRequest<NSFetchRequestResult>(entityName: self.objeto.entityName)
+            
+            do {
+                let respostasCoreData = try context.fetch(requisicao)
+                self.respostasRecuperadas = respostasCoreData as! [NSManagedObject]
+                for item in respostasRecuperadas{
+                    if let r01 = item.value(forKey: "r001"){
+                        self.r001.rating = r01 as! Int
+                    }
+                    if let r02 = item.value(forKey: "r002"){
+                        self.r002.rating = r02 as! Int
+                    }
+                    if let r03 = item.value(forKey: "r003"){
+                        self.r002.rating = r03 as! Int
+                    }
+                    if let r04 = item.value(forKey: "r004"){
+                        self.r004.rating = r04 as! Int
+                    }
+                    if let r05 = item.value(forKey: "r005"){
+                        self.r005.rating = r05 as! Int
+                    }
+                }
+            } catch {
+                let erroAlertController = AlertaFactory(titulo:"Atenção!", mensagem:"Erro ao recuperar dados", style: UIAlertControllerStyle.alert)
+                present(erroAlertController.alerta, animated: true, completion: nil)
+            }
+            
+            
+            
+        }
+        
         
         self.navigationItem.title = objeto.TituloAvaliacao
         
