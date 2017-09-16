@@ -17,9 +17,9 @@ class Cenario: AnyObject{
     var Respostas:[Int] = []
     var cenario:String!
     var entityName:String!
-    var user:String!
+    var user:String
     
-    init(titulo: String, tituloAvaliacao:String, cenario:String, entityName:String, user: String ){
+    init(titulo: String, tituloAvaliacao:String, cenario:String, entityName:String, user: String! ){
         self.Titulo = titulo
         self.TituloAvaliacao = tituloAvaliacao
         self.cenario = cenario

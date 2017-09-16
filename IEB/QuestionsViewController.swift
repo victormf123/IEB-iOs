@@ -35,7 +35,7 @@ class QuestionsViewController: UIViewController {
         
         if self.verificarSeTemResposta(context: context){
             
-            let alertController = UIAlertController(title: "Atenção!", message: "Você já Realizou aX avaliação, espere ate o proximo ciclo", preferredStyle: UIAlertControllerStyle.alert)
+            let alertController = UIAlertController(title: "Atenção!", message: "Você já Realizou a avaliação, espere ate o proximo ciclo", preferredStyle: UIAlertControllerStyle.alert)
             
             let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default){ (UIAlertAction) in
                 
@@ -77,7 +77,7 @@ class QuestionsViewController: UIViewController {
             let db = Database.database().reference()
         
             let respostas = db.child("Respostas")
-            let usuarioResposta = respostas.child(self.objeto.user)
+            let usuarioResposta = respostas.child("\(self.objeto.user)")
             let etityResposta = usuarioResposta.child(self.objeto.entityName)
             etityResposta.child("data").setValue(data)
             etityResposta.child("r001").setValue(self.r001.rating)

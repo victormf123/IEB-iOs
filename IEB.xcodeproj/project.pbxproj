@@ -13,6 +13,8 @@
 		2F39DE9E1F6B292D00536B14 /* DetalhesSocialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F39DE9D1F6B292D00536B14 /* DetalhesSocialViewController.swift */; };
 		2F39DEA01F6B296300536B14 /* QuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F39DE9F1F6B296300536B14 /* QuestionsViewController.swift */; };
 		2F3C719B1F6B6C8D002663BE /* AlertaFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3C719A1F6B6C8D002663BE /* AlertaFactory.swift */; };
+		2F3DC2CB1F6D658300B1A3A5 /* PoliticaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3DC2CA1F6D658300B1A3A5 /* PoliticaViewController.swift */; };
+		2F3DC2CD1F6D65C800B1A3A5 /* EconomicoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3DC2CC1F6D65C800B1A3A5 /* EconomicoViewController.swift */; };
 		2F458DC01F6B44F800C54725 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2F458DBF1F6B44F800C54725 /* GoogleService-Info.plist */; };
 		2F458DC21F6B45C400C54725 /* Cenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F458DC11F6B45C400C54725 /* Cenario.swift */; };
 		2FCA844C1F67707E001593D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCA844B1F67707E001593D3 /* AppDelegate.swift */; };
@@ -54,6 +56,8 @@
 		2F39DE9D1F6B292D00536B14 /* DetalhesSocialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetalhesSocialViewController.swift; sourceTree = "<group>"; };
 		2F39DE9F1F6B296300536B14 /* QuestionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionsViewController.swift; sourceTree = "<group>"; };
 		2F3C719A1F6B6C8D002663BE /* AlertaFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertaFactory.swift; sourceTree = "<group>"; };
+		2F3DC2CA1F6D658300B1A3A5 /* PoliticaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoliticaViewController.swift; sourceTree = "<group>"; };
+		2F3DC2CC1F6D65C800B1A3A5 /* EconomicoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EconomicoViewController.swift; sourceTree = "<group>"; };
 		2F458DBF1F6B44F800C54725 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2F458DC11F6B45C400C54725 /* Cenario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cenario.swift; sourceTree = "<group>"; };
 		2FCA84481F67707E001593D3 /* IEB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IEB.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,6 +118,8 @@
 				2F39DE9B1F6B291500536B14 /* SocialViewController.swift */,
 				2F39DE9D1F6B292D00536B14 /* DetalhesSocialViewController.swift */,
 				2F39DE9F1F6B296300536B14 /* QuestionsViewController.swift */,
+				2F3DC2CA1F6D658300B1A3A5 /* PoliticaViewController.swift */,
+				2F3DC2CC1F6D65C800B1A3A5 /* EconomicoViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -521,6 +527,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F39DE9C1F6B291500536B14 /* SocialViewController.swift in Sources */,
+				2F3DC2CB1F6D658300B1A3A5 /* PoliticaViewController.swift in Sources */,
 				2F39DEA01F6B296300536B14 /* QuestionsViewController.swift in Sources */,
 				2F39DE9E1F6B292D00536B14 /* DetalhesSocialViewController.swift in Sources */,
 				2F3C719B1F6B6C8D002663BE /* AlertaFactory.swift in Sources */,
@@ -528,6 +535,7 @@
 				2F458DC21F6B45C400C54725 /* Cenario.swift in Sources */,
 				2FCA84541F67707E001593D3 /* IEB.xcdatamodeld in Sources */,
 				2FCA844E1F67707E001593D3 /* ViewController.swift in Sources */,
+				2F3DC2CD1F6D65C800B1A3A5 /* EconomicoViewController.swift in Sources */,
 				2FCA844C1F67707E001593D3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
