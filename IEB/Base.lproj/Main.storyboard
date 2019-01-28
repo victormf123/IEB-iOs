@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="NFJ-BE-DVD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="NFJ-BE-DVD">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -111,64 +110,60 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c48-Xt-F1V">
-                                <rect key="frame" x="16" y="328" width="343" height="38"/>
-                                <color key="backgroundColor" red="1" green="0.036389840319999998" blue="0.081169840810000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background-map" translatesAutoresizingMaskIntoConstraints="NO" id="PqK-5I-1yb">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c48-Xt-F1V">
+                                <rect key="frame" x="24" y="388" width="35" height="35"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="343" id="JZt-cy-Eyh"/>
-                                    <constraint firstAttribute="height" constant="38" id="ud2-Op-H1Z"/>
+                                    <constraint firstAttribute="width" constant="35" id="DGD-JN-4JM"/>
+                                    <constraint firstAttribute="height" constant="35" id="kxg-1S-YNB"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Educaçao"/>
+                                <state key="normal" image="educacao"/>
                                 <connections>
                                     <segue destination="Pgw-0F-mP9" kind="show" identifier="segueEducacao" id="902-dX-ufh"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G8W-aD-ftk">
-                                <rect key="frame" x="16" y="377" width="343" height="38"/>
-                                <color key="backgroundColor" red="0.92874674232706034" green="0.9447771256309645" blue="0.31652819697493234" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kkd-IB-IZL">
+                                <rect key="frame" x="24" y="345" width="35" height="35"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="343" id="0sC-er-onW"/>
-                                    <constraint firstAttribute="height" constant="38" id="cF0-7R-IdX"/>
+                                    <constraint firstAttribute="height" constant="35" id="5Dc-Md-7B8"/>
+                                    <constraint firstAttribute="width" constant="35" id="80s-4Y-dhg"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Transporte"/>
-                                <connections>
-                                    <segue destination="Pgw-0F-mP9" kind="show" identifier="segueTransporte" id="wzN-j9-I61"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kkd-IB-IZL">
-                                <rect key="frame" x="16" y="279" width="343" height="41"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="41" id="7ac-9b-ngO"/>
-                                    <constraint firstAttribute="width" constant="343" id="teB-iq-pFE"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Saúde"/>
+                                <state key="normal" image="saude"/>
                                 <connections>
                                     <segue destination="Pgw-0F-mP9" kind="show" identifier="segueSaude" id="Wav-EZ-wuM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G8W-aD-ftk">
+                                <rect key="frame" x="24" y="302" width="35" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="Uew-np-l6M"/>
+                                    <constraint firstAttribute="width" constant="35" id="nRS-mT-o13"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" image="transporte"/>
+                                <connections>
+                                    <segue destination="Pgw-0F-mP9" kind="show" identifier="segueTransporte" id="wzN-j9-I61"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="G8W-aD-ftk" firstAttribute="top" secondItem="c48-Xt-F1V" secondAttribute="bottom" constant="11" id="Abp-0e-xyX"/>
-                            <constraint firstItem="c48-Xt-F1V" firstAttribute="top" secondItem="kkd-IB-IZL" secondAttribute="bottom" constant="8" id="D9k-2J-vl8"/>
-                            <constraint firstItem="G8W-aD-ftk" firstAttribute="top" secondItem="c48-Xt-F1V" secondAttribute="bottom" constant="11" id="Dtp-45-d63"/>
-                            <constraint firstItem="G8W-aD-ftk" firstAttribute="leading" secondItem="F1e-fN-NBP" secondAttribute="leadingMargin" id="JWI-mm-A0r"/>
-                            <constraint firstItem="G8W-aD-ftk" firstAttribute="trailing" secondItem="F1e-fN-NBP" secondAttribute="trailingMargin" id="QVe-xJ-bJD"/>
-                            <constraint firstItem="c48-Xt-F1V" firstAttribute="trailing" secondItem="F1e-fN-NBP" secondAttribute="trailingMargin" id="RI1-7a-2nw"/>
-                            <constraint firstItem="c48-Xt-F1V" firstAttribute="leading" secondItem="F1e-fN-NBP" secondAttribute="leadingMargin" id="WAG-pP-52A"/>
-                            <constraint firstItem="yYq-I5-78x" firstAttribute="top" secondItem="G8W-aD-ftk" secondAttribute="bottom" constant="203" id="WQf-b2-Niz"/>
-                            <constraint firstItem="c48-Xt-F1V" firstAttribute="top" secondItem="kkd-IB-IZL" secondAttribute="bottom" constant="8" id="amC-UE-N3r"/>
-                            <constraint firstItem="kkd-IB-IZL" firstAttribute="centerX" secondItem="F1e-fN-NBP" secondAttribute="centerX" id="h0Q-mV-E0T"/>
-                            <constraint firstItem="kkd-IB-IZL" firstAttribute="top" secondItem="pgZ-oV-yM2" secondAttribute="bottom" constant="215" id="hcQ-8P-rUV"/>
-                            <constraint firstItem="kkd-IB-IZL" firstAttribute="leading" secondItem="F1e-fN-NBP" secondAttribute="leadingMargin" id="iAb-xu-Eyj"/>
-                            <constraint firstItem="kkd-IB-IZL" firstAttribute="trailing" secondItem="F1e-fN-NBP" secondAttribute="trailingMargin" id="jcD-AK-1GP"/>
+                            <constraint firstItem="kkd-IB-IZL" firstAttribute="leading" secondItem="F1e-fN-NBP" secondAttribute="leadingMargin" constant="8" id="2Vu-25-FIk"/>
+                            <constraint firstItem="kkd-IB-IZL" firstAttribute="top" secondItem="G8W-aD-ftk" secondAttribute="bottom" constant="8" id="2xr-tm-a9e"/>
+                            <constraint firstItem="G8W-aD-ftk" firstAttribute="leading" secondItem="F1e-fN-NBP" secondAttribute="leadingMargin" constant="8" id="LKX-e0-TVH"/>
+                            <constraint firstItem="PqK-5I-1yb" firstAttribute="top" secondItem="pgZ-oV-yM2" secondAttribute="bottom" id="QBf-gf-3sk"/>
+                            <constraint firstItem="yYq-I5-78x" firstAttribute="top" secondItem="PqK-5I-1yb" secondAttribute="bottom" id="SW9-Ub-bRy"/>
+                            <constraint firstItem="c48-Xt-F1V" firstAttribute="leading" secondItem="F1e-fN-NBP" secondAttribute="leadingMargin" constant="8" id="WBe-5e-0Y9"/>
+                            <constraint firstAttribute="trailing" secondItem="PqK-5I-1yb" secondAttribute="trailing" id="bk6-5B-nrt"/>
+                            <constraint firstItem="c48-Xt-F1V" firstAttribute="centerY" secondItem="F1e-fN-NBP" secondAttribute="centerY" constant="72" id="cFX-xQ-d6t"/>
+                            <constraint firstItem="kkd-IB-IZL" firstAttribute="centerY" secondItem="F1e-fN-NBP" secondAttribute="centerY" constant="29" id="dYR-MX-ygH"/>
+                            <constraint firstItem="G8W-aD-ftk" firstAttribute="centerY" secondItem="F1e-fN-NBP" secondAttribute="centerY" constant="-14" id="db7-ce-AyJ"/>
+                            <constraint firstItem="PqK-5I-1yb" firstAttribute="leading" secondItem="F1e-fN-NBP" secondAttribute="leading" id="ggg-EC-Lpc"/>
+                            <constraint firstItem="c48-Xt-F1V" firstAttribute="top" secondItem="kkd-IB-IZL" secondAttribute="bottom" constant="8" id="tb8-y5-wef"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Social" id="iaU-uS-oZL"/>
@@ -494,7 +489,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loked" translatesAutoresizingMaskIntoConstraints="NO" id="LDj-PP-tw7">
-                                <rect key="frame" x="74.5" y="221" width="225" height="225"/>
+                                <rect key="frame" x="75" y="221" width="225" height="225"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -535,7 +530,7 @@
                     <tabBarItem key="tabBarItem" title="Economico" id="fzo-fV-XmJ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="2Qm-X8-AEN">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -554,7 +549,7 @@
                     <tabBarItem key="tabBarItem" title="Social" id="5HC-gK-oh3"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="I2b-qA-m21">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -573,7 +568,7 @@
                     <tabBarItem key="tabBarItem" title="Politico" id="4qC-br-xdF"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ULa-KY-L0Z">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -587,9 +582,13 @@
         </scene>
     </scenes>
     <resources>
+        <image name="background-map" width="475" height="587"/>
+        <image name="educacao" width="125" height="125"/>
         <image name="loked" width="225" height="225"/>
+        <image name="saude" width="125" height="125"/>
+        <image name="transporte" width="125" height="125"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="wzN-j9-I61"/>
+        <segue reference="902-dX-ufh"/>
     </inferredMetricsTieBreakers>
 </document>

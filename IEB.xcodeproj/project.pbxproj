@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B6762FF21FE8B8500A442A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B6762FE21FE8B8500A442A5 /* Assets.xcassets */; };
 		2F3448E51F68E6E600E3F383 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3448E41F68E6E600E3F383 /* RatingControl.swift */; };
 		2F356C221F679CCA00EFE0D3 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F356C211F679CCA00EFE0D3 /* CoreLocation.framework */; };
 		2F39DE9C1F6B291500536B14 /* SocialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F39DE9B1F6B291500536B14 /* SocialViewController.swift */; };
 		2F39DE9E1F6B292D00536B14 /* DetalhesSocialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F39DE9D1F6B292D00536B14 /* DetalhesSocialViewController.swift */; };
 		2F39DEA01F6B296300536B14 /* QuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F39DE9F1F6B296300536B14 /* QuestionsViewController.swift */; };
 		2F3C719B1F6B6C8D002663BE /* AlertaFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3C719A1F6B6C8D002663BE /* AlertaFactory.swift */; };
-		2F3DC2CB1F6D658300B1A3A5 /* PoliticaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3DC2CA1F6D658300B1A3A5 /* PoliticaViewController.swift */; };
 		2F3DC2CD1F6D65C800B1A3A5 /* EconomicoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3DC2CC1F6D65C800B1A3A5 /* EconomicoViewController.swift */; };
 		2F458DC01F6B44F800C54725 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2F458DBF1F6B44F800C54725 /* GoogleService-Info.plist */; };
 		2F458DC21F6B45C400C54725 /* Cenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F458DC11F6B45C400C54725 /* Cenario.swift */; };
@@ -21,7 +21,6 @@
 		2FCA844E1F67707E001593D3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCA844D1F67707E001593D3 /* ViewController.swift */; };
 		2FCA84511F67707E001593D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FCA844F1F67707E001593D3 /* Main.storyboard */; };
 		2FCA84541F67707E001593D3 /* IEB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2FCA84521F67707E001593D3 /* IEB.xcdatamodeld */; };
-		2FCA84561F67707E001593D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FCA84551F67707E001593D3 /* Assets.xcassets */; };
 		2FCA84591F67707E001593D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FCA84571F67707E001593D3 /* LaunchScreen.storyboard */; };
 		2FCA84641F67707E001593D3 /* IEBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCA84631F67707E001593D3 /* IEBTests.swift */; };
 		2FCA846F1F67707E001593D3 /* IEBUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCA846E1F67707E001593D3 /* IEBUITests.swift */; };
@@ -49,6 +48,7 @@
 
 /* Begin PBXFileReference section */
 		1A8ECF4D84E02C21837B93B8 /* Pods-IEB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IEB.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IEB/Pods-IEB.debug.xcconfig"; sourceTree = "<group>"; };
+		1B6762FE21FE8B8500A442A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		230102D9EFE948C7E11AE522 /* Pods_IEBTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IEBTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F3448E41F68E6E600E3F383 /* RatingControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 		2F356C211F679CCA00EFE0D3 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -56,7 +56,6 @@
 		2F39DE9D1F6B292D00536B14 /* DetalhesSocialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetalhesSocialViewController.swift; sourceTree = "<group>"; };
 		2F39DE9F1F6B296300536B14 /* QuestionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionsViewController.swift; sourceTree = "<group>"; };
 		2F3C719A1F6B6C8D002663BE /* AlertaFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertaFactory.swift; sourceTree = "<group>"; };
-		2F3DC2CA1F6D658300B1A3A5 /* PoliticaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoliticaViewController.swift; sourceTree = "<group>"; };
 		2F3DC2CC1F6D65C800B1A3A5 /* EconomicoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EconomicoViewController.swift; sourceTree = "<group>"; };
 		2F458DBF1F6B44F800C54725 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2F458DC11F6B45C400C54725 /* Cenario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cenario.swift; sourceTree = "<group>"; };
@@ -65,7 +64,6 @@
 		2FCA844D1F67707E001593D3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2FCA84501F67707E001593D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2FCA84531F67707E001593D3 /* IEB.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = IEB.xcdatamodel; sourceTree = "<group>"; };
-		2FCA84551F67707E001593D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2FCA84581F67707E001593D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2FCA845A1F67707E001593D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2FCA845F1F67707E001593D3 /* IEBTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IEBTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,7 +116,6 @@
 				2F39DE9B1F6B291500536B14 /* SocialViewController.swift */,
 				2F39DE9D1F6B292D00536B14 /* DetalhesSocialViewController.swift */,
 				2F39DE9F1F6B296300536B14 /* QuestionsViewController.swift */,
-				2F3DC2CA1F6D658300B1A3A5 /* PoliticaViewController.swift */,
 				2F3DC2CC1F6D65C800B1A3A5 /* EconomicoViewController.swift */,
 			);
 			name = Controllers;
@@ -183,7 +180,7 @@
 				2FCA844B1F67707E001593D3 /* AppDelegate.swift */,
 				2FCA844D1F67707E001593D3 /* ViewController.swift */,
 				2FCA844F1F67707E001593D3 /* Main.storyboard */,
-				2FCA84551F67707E001593D3 /* Assets.xcassets */,
+				1B6762FE21FE8B8500A442A5 /* Assets.xcassets */,
 				2FCA84571F67707E001593D3 /* LaunchScreen.storyboard */,
 				2FCA845A1F67707E001593D3 /* Info.plist */,
 				2FCA84521F67707E001593D3 /* IEB.xcdatamodeld */,
@@ -344,7 +341,7 @@
 			files = (
 				2FCA84591F67707E001593D3 /* LaunchScreen.storyboard in Resources */,
 				2F458DC01F6B44F800C54725 /* GoogleService-Info.plist in Resources */,
-				2FCA84561F67707E001593D3 /* Assets.xcassets in Resources */,
+				1B6762FF21FE8B8500A442A5 /* Assets.xcassets in Resources */,
 				2FCA84511F67707E001593D3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -473,14 +470,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-IEB/Pods-IEB-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -527,7 +524,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F39DE9C1F6B291500536B14 /* SocialViewController.swift in Sources */,
-				2F3DC2CB1F6D658300B1A3A5 /* PoliticaViewController.swift in Sources */,
 				2F39DEA01F6B296300536B14 /* QuestionsViewController.swift in Sources */,
 				2F39DE9E1F6B292D00536B14 /* DetalhesSocialViewController.swift in Sources */,
 				2F3C719B1F6B6C8D002663BE /* AlertaFactory.swift in Sources */,
@@ -691,6 +687,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = HRJ8RTJ59K;
 				INFOPLIST_FILE = IEB/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.coffee.IEB;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -705,6 +702,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = HRJ8RTJ59K;
 				INFOPLIST_FILE = IEB/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.coffee.IEB;
 				PRODUCT_NAME = "$(TARGET_NAME)";
