@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseDatabase
 
-class Cenario: AnyObject{
+class Cenario{
     
     var Titulo:String!
     var TituloAvaliacao:String!
