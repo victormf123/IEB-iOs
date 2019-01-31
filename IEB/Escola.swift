@@ -10,67 +10,70 @@ import UIKit
 
 class Escola{
     
+    //Informações de Informações Basica
+    var codEscola:Double!
     var latitude:Double!
     var longitude:Double!
-    var nomeFantasia:String!
+    var nome:String!
     var logradouro:String!
+    var rede:String!
+    var zona: String!
+    var telefone: String!
+    var email: String!
     
     
-    private func buscarListaDeEscolas(latitude: String, longitude: String) -> [Escola]{
-        var escolas = [Escola]()
-        let escola = Escola()
-        let url = URL(string: "http://mobile-aceite.tcu.gov.br/mapa-da-saude/rest/estabelecimentos/latitude/\(latitude)/longitude/\(longitude)/raio/50")
-        let task = URLSession.shared.dataTask(with: url!) { (dados, response, erro) in
-            if erro == nil {
-                
-                if let content = dados{
-                    
-                    do{
-                        
-                        
-                        let objetoJson = try JSONSerialization.jsonObject(with: content, options: JSONSerialization.ReadingOptions.mutableContainers) as! [AnyObject]
-                        for item in objetoJson{
-                            //ToDo: retorna uma Dictionary
-                            
-                            if let dicionario = item as? NSDictionary{
-                                print("==== INICIO ==== Escola")
-                                print(item)
-                                print("==== FIM ==== Escola")
-                                if let latitude = dicionario["lat"]{
-                                    escola.latitude = latitude as? Double
-                                }
-                                if let longitude = dicionario["long"]{
-                                    escola.longitude = longitude as? Double
-                                }
-                                if let nomeFantasia = dicionario["nomeFantasia"]{
-                                    escola.nomeFantasia = nomeFantasia as? String
-                                }
-                                if let logradouro = dicionario["logradouro"]{
-                                    escola.logradouro = logradouro as? String
-                                }
-                                
-                                escolas.append(escola)
-                            }
-                            
-                        }
-                        
-                        
-                    }catch{
-                        print("ERRO AO CONVERTER")
-                    }
-                }
-                
-            }else{
-                print("Sucesso ao acessar url ERRO: \(String(describing: erro))")
-            }
-        }
-        task.resume()
+    //Informações de Infraestrutura Basica
+    var qtdComputadores: Int!
+    var qtdComputadoresPorAluno: Int!
+    var qtdSalasExistentes: Int!
+    var qtdSalasUtilizadas: Int!
+    var qtdAlunos: Int!
+    var esferaAdministrativa: String!
+    var seConveniadaSetorPublico: String!
+    var qtdFuncionarios: Int!
+    var situacaoFuncionamento: String!
+    var categoriaEscolaPrivada: String!
+    var tipoConvenioPoderPublico: String!
+    
+    //Informações de Infraestrutura
+    var atendeEducacaoEspecializada:String!
+    var banheiroTemChuveiro:String!
+    var ofereceAlimentacao:String!
+    var temAcessibilidade:String!
+    var temAguaFiltrada:String!
+    var temAlmoxarifado:String!
+    var temAreaVerde:String!
+    var temAuditorio:String!
+    var temBandaLarga:String!
+    var temBercario:String!
+    var temBiblioteca:String!
+    var temCozinha:String!
+    var temCreche:String!
+    var temDespensa:String!
+    var temEducacaoIndigena:String!
+    var temEducacaoJovemAdulto:String!
+    var temEnsinoFundamental:String!
+    var temEnsinoMedio:String!
+    var temEnsinoMedioIntegrado:String!
+    var temEnsinoMedioNormal:String!
+    var temEnsinoMedioProfissional:String!
+    var temInternet:String!
+    var temLaboratorioCiencias:String!
+    var temLaboratorioInformatica:String!
+    var temParqueInfantil:String!
+    var temPatioCoberto:String!
+    var temPatioDescoberto:String!
+    var temQuadraEsporteCoberta:String!
+    var temQuadraEsporteDescoberta:String!
+    var temRefeitorio:String!
+    var temSalaLeitura:String!
+    var temSanitarioForaPredio:String!
+    var temSanitarioNoPredio:String!
+    
+    
+    
+    
+    init() {
         
-        return escolas
-    }
-    
-    private func buscarEscola(latitude: String, longitude: String) -> Escola {
-        let escola = Escola()
-        return escola
     }
 }

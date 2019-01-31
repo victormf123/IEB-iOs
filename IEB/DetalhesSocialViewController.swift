@@ -17,6 +17,7 @@ class DetalhesSocialViewController: UIViewController, MKMapViewDelegate, CLLocat
     
     
     
+    @IBOutlet weak var nome: UILabel!
     @IBOutlet weak var labelEstado: UILabel!
     
     @IBOutlet weak var mapa: MKMapView!
@@ -26,6 +27,7 @@ class DetalhesSocialViewController: UIViewController, MKMapViewDelegate, CLLocat
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        self.escola = Escola()
         gerenciadorLocal.delegate = self
         gerenciadorLocal.desiredAccuracy = kCLLocationAccuracyBest
         gerenciadorLocal.requestWhenInUseAuthorization()
@@ -87,6 +89,7 @@ class DetalhesSocialViewController: UIViewController, MKMapViewDelegate, CLLocat
         
         
     }
+    
     private func recuperandoPointActionsSaude(latitude: Double, longitude: Double){
         let url = URL(string: "http://mobile-aceite.tcu.gov.br/mapa-da-saude/rest/estabelecimentos/latitude/\(latitude)/longitude/\(longitude)/raio/50")
         let task = URLSession.shared.dataTask(with: url!) { (dados, response, erro) in
@@ -172,9 +175,9 @@ class DetalhesSocialViewController: UIViewController, MKMapViewDelegate, CLLocat
                                         anotacao.title = nome as? String
                                         print(nome)
                                     }
-                                    if let rede = dicionario["rede"]{
-                                        anotacao.subtitle = rede as? String
-                                        print(rede)
+                                    if let codEscola = dicionario["codEscola"]{
+                                        anotacao.subtitle = String(describing: codEscola)
+                                        print(codEscola)
                                     }
                                     
                                     self.mapa.addAnnotation(anotacao)
@@ -219,7 +222,7 @@ class DetalhesSocialViewController: UIViewController, MKMapViewDelegate, CLLocat
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
-        let localizacaoUser: CLLocation = locations.last!
+        let _: CLLocation = locations.last!
         
         // monta exibicao do mapa
 //        let deltaLatitude: CLLocationDegrees = 0.02
@@ -258,8 +261,20 @@ class DetalhesSocialViewController: UIViewController, MKMapViewDelegate, CLLocat
         if view.annotation is MKUserLocation{
             return
         }
-        print(view.annotation?.coordinate)
-        
+        let codEscola:String = view.annotation!.subtitle!!
+        let codUnidade:String = view.annotation!.subtitle!!
+        switch self.objeto.cenario {
+        case "saude":
+            //self.recuperarHospitail(codUnidade)
+            break
+        case "transporte":
+            break
+        case "educacao":
+            self.recuperarEscola(codEscola: codEscola)
+            break
+        default:
+            break
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -271,6 +286,98 @@ class DetalhesSocialViewController: UIViewController, MKMapViewDelegate, CLLocat
             viewControllerDestino.objeto = objeto
             
         }
+    }
+    
+    private func recuperarEscola(codEscola: String){
+        let url = URL(string: "http://mobile-aceite.tcu.gov.br/nossaEscolaRS/rest/escolas/\(codEscola)")
+        let task = URLSession.shared.dataTask(with: url!) { (dados, response, erro) in
+            if erro == nil {
+                
+                if let dadosRetorno = dados{
+                    
+                    do{
+                        if let objJSON = try JSONSerialization.jsonObject(with: dadosRetorno, options: []) as? [String: Any]{
+                            print(objJSON)
+                            if let infraestrutura = objJSON["infraestrutura"] as? [String: Any] {
+                                
+                                
+                                DispatchQueue.main.async(execute: {
+                                    self.escola.codEscola = objJSON["codEscola"]  as? Double
+                                    self.escola.nome = objJSON["nome"] as? String
+                                    self.escola.latitude = objJSON["latitude"] as? Double
+                                    self.escola.longitude = objJSON["longitude"] as? Double
+                                    self.escola.logradouro = objJSON["logradouro"] as? String
+                                    self.escola.rede = objJSON["rede"] as? String
+                                    self.escola.zona = objJSON["zona"] as? String
+                                    self.escola.telefone = objJSON["telefone"] as? String
+                                    self.escola.email = objJSON["email"] as? String
+                                    
+                                    
+                                    //Informações de Infraestrutura basica
+                                    self.escola.qtdComputadores = objJSON["qtdComputadores"] as? Int
+                                    self.escola.qtdComputadoresPorAluno = objJSON["qtdComputadoresPorAluno"] as? Int
+                                    self.escola.qtdSalasExistentes = objJSON["qtdSalasExistentes"] as? Int
+                                    self.escola.qtdSalasUtilizadas = objJSON["qtdSalasUtilizadas"] as? Int
+                                    self.escola.qtdAlunos = objJSON["qtdAlunos"] as? Int
+                                    self.escola.esferaAdministrativa = objJSON["esferaAdministrativa"] as? String
+                                    self.escola.seConveniadaSetorPublico = objJSON["seConveniadaSetorPublico"] as? String
+                                    self.escola.qtdFuncionarios = objJSON["qtdFuncionarios"] as? Int
+                                    self.escola.situacaoFuncionamento = objJSON["situacaoFuncionamento"] as? String
+                                    self.escola.categoriaEscolaPrivada = objJSON["categoriaEscolaPrivada"] as? String
+                                    self.escola.tipoConvenioPoderPublico = objJSON["tipoConvenioPoderPublico"] as? String
+                                    
+                                    //Informações de Infraestrutura
+                                    self.escola.atendeEducacaoEspecializada = infraestrutura["atendeEducacaoEspecializada"] as? String
+                                    self.escola.banheiroTemChuveiro = infraestrutura["banheiroTemChuveiro"] as? String
+                                    self.escola.ofereceAlimentacao = infraestrutura["ofereceAlimentacao"] as? String
+                                    self.escola.temAcessibilidade = infraestrutura["temAcessibilidade"] as? String
+                                    self.escola.temAguaFiltrada = infraestrutura["temAguaFiltrada"] as? String
+                                    self.escola.temAlmoxarifado = infraestrutura["temAlmoxarifado"] as? String
+                                    self.escola.temAreaVerde = infraestrutura["temAreaVerde"] as? String
+                                    self.escola.temAuditorio = infraestrutura["temAuditorio"] as? String
+                                    self.escola.temBandaLarga = infraestrutura["temBandaLarga"] as? String
+                                    self.escola.temBercario = infraestrutura["temBercario"] as? String
+                                    self.escola.temBiblioteca = infraestrutura["temBiblioteca"] as? String
+                                    self.escola.temCozinha = infraestrutura["temCozinha"] as? String
+                                    self.escola.temCreche = infraestrutura["temCreche"] as? String
+                                    self.escola.temDespensa = infraestrutura["temDespensa"] as? String
+                                    self.escola.temEducacaoIndigena = infraestrutura["temEducacaoIndigena"] as? String
+                                    self.escola.temEducacaoJovemAdulto = infraestrutura["temEducacaoJovemAdulto"] as? String
+                                    self.escola.temEnsinoFundamental = infraestrutura["temEnsinoFundamental"] as? String
+                                    self.escola.temEnsinoMedio = infraestrutura["temEnsinoMedio"] as? String
+                                    self.escola.temEnsinoMedioIntegrado = infraestrutura["temEnsinoMedioIntegrado"] as? String
+                                    self.escola.temEnsinoMedioNormal = infraestrutura["temEnsinoMedioNormal"] as? String
+                                    self.escola.temEnsinoMedioProfissional = infraestrutura["temEnsinoMedioProfissional"] as? String
+                                    self.escola.temInternet = infraestrutura["temInternet"] as? String
+                                    self.escola.temLaboratorioCiencias = infraestrutura["temLaboratorioCiencias"] as? String
+                                    self.escola.temLaboratorioInformatica = infraestrutura["temLaboratorioInformatica"] as? String
+                                    self.escola.temParqueInfantil = infraestrutura["temParqueInfantil"] as? String
+                                    self.escola.temPatioCoberto = infraestrutura["temPatioCoberto"] as? String
+                                    self.escola.temPatioDescoberto = infraestrutura["temPatioDescoberto"] as? String
+                                    self.escola.temQuadraEsporteCoberta = infraestrutura["temQuadraEsporteCoberta"] as? String
+                                    self.escola.temQuadraEsporteDescoberta = infraestrutura["temQuadraEsporteDescoberta"] as? String
+                                    self.escola.temRefeitorio = infraestrutura["temRefeitorio"] as? String
+                                    self.escola.temSalaLeitura = infraestrutura["temSalaLeitura"] as? String
+                                    self.escola.temSanitarioForaPredio = infraestrutura["temSanitarioForaPredio"] as? String
+                                    self.escola.temSanitarioNoPredio = infraestrutura["temSanitarioNoPredio"] as? String
+                                    
+                                    
+                                    self.nome.text = self.escola.nome
+                                    print("==== ESCOLA ====")
+                                    print(self.escola.temSanitarioNoPredio)
+                                })
+                            }
+                        }
+                    }catch{
+                        print("ERRO AO CONVERTER")
+                    }
+                }
+                
+            }else{
+                print("Sucesso ao acessar url ERRO: \(String(describing: erro))")
+            }
+        }
+        task.resume()
     }
     
     override func didReceiveMemoryWarning() {
