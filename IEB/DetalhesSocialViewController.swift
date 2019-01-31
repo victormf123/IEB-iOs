@@ -8,10 +8,12 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
 class DetalhesSocialViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
     var objeto:Cenario!
+    var escola:Escola!
     
     
     
@@ -27,23 +29,56 @@ class DetalhesSocialViewController: UIViewController, MKMapViewDelegate, CLLocat
         gerenciadorLocal.delegate = self
         gerenciadorLocal.desiredAccuracy = kCLLocationAccuracyBest
         gerenciadorLocal.requestWhenInUseAuthorization()
+        let localizacaoUser: CLLocation = gerenciadorLocal.location!
+        self.mapa.showsUserLocation = true
+        self.mapa.mapType = .hybrid
+        self.mapa.delegate = self
         
-        gerenciadorLocal.startUpdatingLocation()
+        let deltaLatitude: CLLocationDegrees = 0.02
+        let deltaLongitude: CLLocationDegrees = 0.02
+        
+        let localizacao: CLLocationCoordinate2D = CLLocationCoordinate2DMake(localizacaoUser.coordinate.latitude, localizacaoUser.coordinate.longitude)
+        let areaVisualizacao: MKCoordinateSpan = MKCoordinateSpanMake(deltaLatitude, deltaLongitude)
+        
+        let regiao: MKCoordinateRegion = MKCoordinateRegionMake(localizacao, areaVisualizacao)
+        
+        self.mapa.setRegion(regiao, animated: true)
+        
+        CLGeocoder().reverseGeocodeLocation(localizacaoUser) { (detalhesLocal, erro) in
+            if erro == nil {
+                if let dadosLocal = detalhesLocal?.first{
+                    var locality = ""
+                    if dadosLocal.locality != nil{
+                        locality = dadosLocal.locality!
+                    }
+                    
+                    var subLocality = ""
+                    if dadosLocal.subLocality != nil{
+                        subLocality = dadosLocal.subLocality!
+                    }
+                    
+                    self.labelEstado.text = locality + " - " + subLocality
+                    
+                }
+            }
+        }
         
         self.navigationItem.title = objeto.Titulo
         
-        let localizacao = gerenciadorLocal.location?.coordinate
+        
         
         switch self.objeto.cenario {
         case "saude":
-            self.recuperandoDadosSaude(latitude: (localizacao?.latitude)!, longitude: (localizacao?.longitude)!)
+            self.recuperandoPointActionsSaude(latitude: (localizacaoUser.coordinate.latitude), longitude: (localizacaoUser.coordinate.longitude))
             break
         case "transporte":
             let erroAlertController = AlertaFactory(titulo:"Atenção!", mensagem:"Ainda não Temos dados de Transporte Público, mas estamos trabalhando para obter!", style: UIAlertControllerStyle.alert)
             present(erroAlertController.alerta, animated: true, completion: nil)
             break
         case "educacao":
-            self.recuperarDadosEducacao(latitude: (localizacao?.latitude)!, longitude: (localizacao?.longitude)!)
+            self.recuperarPointAnotationsEducacao(latitude: (localizacaoUser.coordinate.latitude), longitude: (localizacaoUser.coordinate.longitude))
+            
+            
             break
         default:
             break
@@ -52,9 +87,8 @@ class DetalhesSocialViewController: UIViewController, MKMapViewDelegate, CLLocat
         
         
     }
-    
-    private func recuperandoDadosSaude(latitude: Double, longitude: Double){
-        let url = URL(string: "http://mobile-aceite.tcu.gov.br/mapa-da-saude/rest/estabelecimentos/latitude/\(latitude)/longitude/\(longitude)/raio/2")
+    private func recuperandoPointActionsSaude(latitude: Double, longitude: Double){
+        let url = URL(string: "http://mobile-aceite.tcu.gov.br/mapa-da-saude/rest/estabelecimentos/latitude/\(latitude)/longitude/\(longitude)/raio/50")
         let task = URLSession.shared.dataTask(with: url!) { (dados, response, erro) in
             if erro == nil {
                 
@@ -66,6 +100,7 @@ class DetalhesSocialViewController: UIViewController, MKMapViewDelegate, CLLocat
                             
                             // Exibir Anotação
                             let anotacao = MKPointAnnotation()
+                            //ToDo: For para percorrer a dictionary use um print()
                             if let dicionario = item as? NSDictionary{
                                 print("==== INICIO ====")
                                 print(item)
@@ -107,8 +142,10 @@ class DetalhesSocialViewController: UIViewController, MKMapViewDelegate, CLLocat
         task.resume()
     }
     
-    private func recuperarDadosEducacao(latitude: Double, longitude: Double){
-        let url = URL(string: "http://mobile-aceite.tcu.gov.br/nossaEscolaRS/rest/escolas/latitude/\(latitude)/longitude/\(longitude)/raio/2")
+    
+    
+    private func recuperarPointAnotationsEducacao(latitude: Double, longitude: Double){
+        let url = URL(string: "http://mobile-aceite.tcu.gov.br/nossaEscolaRS/rest/escolas/latitude/\(latitude)/longitude/\(longitude)/raio/50")
         let task = URLSession.shared.dataTask(with: url!) { (dados, response, erro) in
             if erro == nil {
                 
@@ -185,35 +222,43 @@ class DetalhesSocialViewController: UIViewController, MKMapViewDelegate, CLLocat
         let localizacaoUser: CLLocation = locations.last!
         
         // monta exibicao do mapa
-        let deltaLatitude: CLLocationDegrees = 0.02
-        let deltaLongitude: CLLocationDegrees = 0.02
+//        let deltaLatitude: CLLocationDegrees = 0.02
+//        let deltaLongitude: CLLocationDegrees = 0.02
+//
+//        let localizacao: CLLocationCoordinate2D = CLLocationCoordinate2DMake(localizacaoUser.coordinate.latitude, localizacaoUser.coordinate.longitude)
+//        let areaVisualizacao: MKCoordinateSpan = MKCoordinateSpanMake(deltaLatitude, deltaLongitude)
+//
+//        let regiao: MKCoordinateRegion = MKCoordinateRegionMake(localizacao, areaVisualizacao)
+//
+//        self.mapa.setRegion(regiao, animated: true)
+//
+//        CLGeocoder().reverseGeocodeLocation(localizacaoUser) { (detalhesLocal, erro) in
+//            if erro == nil {
+//                if let dadosLocal = detalhesLocal?.first{
+//                    var locality = ""
+//                    if dadosLocal.locality != nil{
+//                        locality = dadosLocal.locality!
+//                    }
+//
+//                    var subLocality = ""
+//                    if dadosLocal.subLocality != nil{
+//                        subLocality = dadosLocal.subLocality!
+//                    }
+//
+//                    self.labelEstado.text = locality + " - " + subLocality
+//
+//                }
+//            }
+//        }
         
-        let localizacao: CLLocationCoordinate2D = CLLocationCoordinate2DMake(localizacaoUser.coordinate.latitude, localizacaoUser.coordinate.longitude)
-        let areaVisualizacao: MKCoordinateSpan = MKCoordinateSpanMake(deltaLatitude, deltaLongitude)
         
-        let regiao: MKCoordinateRegion = MKCoordinateRegionMake(localizacao, areaVisualizacao)
-        
-        mapa.setRegion(regiao, animated: true)
-        
-        CLGeocoder().reverseGeocodeLocation(localizacaoUser) { (detalhesLocal, erro) in
-            if erro == nil {
-                if let dadosLocal = detalhesLocal?.first{
-                    var locality = ""
-                    if dadosLocal.locality != nil{
-                        locality = dadosLocal.locality!
-                    }
-                    
-                    var subLocality = ""
-                    if dadosLocal.subLocality != nil{
-                        subLocality = dadosLocal.subLocality!
-                    }
-                    
-                    self.labelEstado.text = locality + " - " + subLocality
-
-                }
-            }
+    }
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        if view.annotation is MKUserLocation{
+            return
         }
-        
+        print(view.annotation?.coordinate)
         
     }
     
