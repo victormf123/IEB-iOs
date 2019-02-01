@@ -21,6 +21,13 @@ class Escola{
     var telefone: String!
     var email: String!
     
+    //Endereço
+    var bairro:String!
+    var cep:String!
+    var descricao:String!
+    var municipio:String!
+    var uf:String!
+    
     
     //Informações de Infraestrutura Basica
     var qtdComputadores: Int!
