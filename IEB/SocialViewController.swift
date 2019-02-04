@@ -32,19 +32,21 @@ class SocialViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        let viewControllerDestino = segue.destination as! DetalhesSocialViewController
-        
-       
-                if segue.identifier == "segueEducacao"{
-                    viewControllerDestino.objeto = Cenario(titulo: "Educação", tituloAvaliacao: "Avaliação - Educação", cenario:"educacao", entityName: "EducacaoRespostas", user: "\(self.email!)")
-                }
                 if segue.identifier == "segueTransporte"{
+                    let viewControllerDestino = segue.destination as! TransporteViewController
                     viewControllerDestino.objeto = Cenario(titulo: "Transporte", tituloAvaliacao: "Avaliação - Transporte", cenario: "transporte", entityName: "TransporteRespostas", user: "\(self.email!)")
                 }
                 if segue.identifier == "segueSaude"{
-                    viewControllerDestino.objeto = Cenario(titulo: "Saúde", tituloAvaliacao: "Avaliação - Saúde", cenario: "saude", entityName: "SaudeRespostas", user: "\(self.email)")
+                    let tableViewControllerDestino = segue.destination as! DadosDetalhesSocialTableViewController
+                    tableViewControllerDestino.objeto = Cenario(titulo: "Saúde", tituloAvaliacao: "Avaliação - Saúde", cenario: "saude", entityName: "SaudeRespostas", user: "\(self.email!)")
                 }
+        
+                if segue.identifier == "segueEducacao"{
+                    let tableViewControllerDestino = segue.destination as! DadosDetalhesSocialTableViewController
+                    tableViewControllerDestino.objeto = Cenario(titulo: "Educação", tituloAvaliacao: "Avaliação - Educação", cenario:"educacao", entityName: "EducacaoRespostas", user: "\(self.email!)")
+                }
+       
+        
         
 
     }

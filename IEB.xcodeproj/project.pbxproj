@@ -8,7 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		1B29C6262202721A00EFA22B /* Escola.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B29C6252202721A00EFA22B /* Escola.swift */; };
+		1B3F9D2C2207E3AB0008F892 /* TransporteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3F9D2B2207E3AB0008F892 /* TransporteViewController.swift */; };
 		1B6762FF21FE8B8500A442A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B6762FE21FE8B8500A442A5 /* Assets.xcassets */; };
+		1BEB0C83220723F700716B65 /* InformacoesSocialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEB0C82220723F700716B65 /* InformacoesSocialViewController.swift */; };
+		1BEB0C86220739B500716B65 /* DadosDetalhesSocialTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEB0C85220739B500716B65 /* DadosDetalhesSocialTableViewController.swift */; };
 		2F3448E51F68E6E600E3F383 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3448E41F68E6E600E3F383 /* RatingControl.swift */; };
 		2F356C221F679CCA00EFE0D3 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F356C211F679CCA00EFE0D3 /* CoreLocation.framework */; };
 		2F39DE9C1F6B291500536B14 /* SocialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F39DE9B1F6B291500536B14 /* SocialViewController.swift */; };
@@ -50,7 +53,10 @@
 /* Begin PBXFileReference section */
 		1A8ECF4D84E02C21837B93B8 /* Pods-IEB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IEB.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IEB/Pods-IEB.debug.xcconfig"; sourceTree = "<group>"; };
 		1B29C6252202721A00EFA22B /* Escola.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Escola.swift; sourceTree = "<group>"; };
+		1B3F9D2B2207E3AB0008F892 /* TransporteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransporteViewController.swift; sourceTree = "<group>"; };
 		1B6762FE21FE8B8500A442A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1BEB0C82220723F700716B65 /* InformacoesSocialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformacoesSocialViewController.swift; sourceTree = "<group>"; };
+		1BEB0C85220739B500716B65 /* DadosDetalhesSocialTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DadosDetalhesSocialTableViewController.swift; sourceTree = "<group>"; };
 		230102D9EFE948C7E11AE522 /* Pods_IEBTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IEBTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F3448E41F68E6E600E3F383 /* RatingControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 		2F356C211F679CCA00EFE0D3 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -112,6 +118,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1BEB0C842207393400716B65 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				1BEB0C85220739B500716B65 /* DadosDetalhesSocialTableViewController.swift */,
+			);
+			name = TableView;
+			sourceTree = "<group>";
+		};
 		2F3448E61F68F73A00E3F383 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +133,8 @@
 				2F39DE9D1F6B292D00536B14 /* DetalhesSocialViewController.swift */,
 				2F39DE9F1F6B296300536B14 /* QuestionsViewController.swift */,
 				2F3DC2CC1F6D65C800B1A3A5 /* EconomicoViewController.swift */,
+				1BEB0C82220723F700716B65 /* InformacoesSocialViewController.swift */,
+				1B3F9D2B2207E3AB0008F892 /* TransporteViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -177,6 +193,7 @@
 		2FCA844A1F67707E001593D3 /* IEB */ = {
 			isa = PBXGroup;
 			children = (
+				1BEB0C842207393400716B65 /* TableView */,
 				2F39DEA11F6B2D5B00536B14 /* Models */,
 				2F3448E61F68F73A00E3F383 /* Controllers */,
 				2F356C231F679FEF00EFE0D3 /* commons */,
@@ -526,7 +543,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BEB0C83220723F700716B65 /* InformacoesSocialViewController.swift in Sources */,
 				1B29C6262202721A00EFA22B /* Escola.swift in Sources */,
+				1B3F9D2C2207E3AB0008F892 /* TransporteViewController.swift in Sources */,
 				2F39DE9C1F6B291500536B14 /* SocialViewController.swift in Sources */,
 				2F39DEA01F6B296300536B14 /* QuestionsViewController.swift in Sources */,
 				2F39DE9E1F6B292D00536B14 /* DetalhesSocialViewController.swift in Sources */,
@@ -535,6 +554,7 @@
 				2F458DC21F6B45C400C54725 /* Cenario.swift in Sources */,
 				2FCA84541F67707E001593D3 /* IEB.xcdatamodeld in Sources */,
 				2FCA844E1F67707E001593D3 /* ViewController.swift in Sources */,
+				1BEB0C86220739B500716B65 /* DadosDetalhesSocialTableViewController.swift in Sources */,
 				2F3DC2CD1F6D65C800B1A3A5 /* EconomicoViewController.swift in Sources */,
 				2FCA844C1F67707E001593D3 /* AppDelegate.swift in Sources */,
 			);
