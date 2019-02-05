@@ -10,6 +10,7 @@
 		1B29C6262202721A00EFA22B /* Escola.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B29C6252202721A00EFA22B /* Escola.swift */; };
 		1B3F9D2C2207E3AB0008F892 /* TransporteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3F9D2B2207E3AB0008F892 /* TransporteViewController.swift */; };
 		1B6762FF21FE8B8500A442A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B6762FE21FE8B8500A442A5 /* Assets.xcassets */; };
+		1B89E3D922091C4B00A815D9 /* InformacaoEscolaPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B89E3D822091C4B00A815D9 /* InformacaoEscolaPopupViewController.swift */; };
 		1BEB0C83220723F700716B65 /* InformacoesSocialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEB0C82220723F700716B65 /* InformacoesSocialViewController.swift */; };
 		1BEB0C86220739B500716B65 /* DadosDetalhesSocialTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEB0C85220739B500716B65 /* DadosDetalhesSocialTableViewController.swift */; };
 		2F3448E51F68E6E600E3F383 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3448E41F68E6E600E3F383 /* RatingControl.swift */; };
@@ -55,6 +56,7 @@
 		1B29C6252202721A00EFA22B /* Escola.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Escola.swift; sourceTree = "<group>"; };
 		1B3F9D2B2207E3AB0008F892 /* TransporteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransporteViewController.swift; sourceTree = "<group>"; };
 		1B6762FE21FE8B8500A442A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1B89E3D822091C4B00A815D9 /* InformacaoEscolaPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformacaoEscolaPopupViewController.swift; sourceTree = "<group>"; };
 		1BEB0C82220723F700716B65 /* InformacoesSocialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformacoesSocialViewController.swift; sourceTree = "<group>"; };
 		1BEB0C85220739B500716B65 /* DadosDetalhesSocialTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DadosDetalhesSocialTableViewController.swift; sourceTree = "<group>"; };
 		230102D9EFE948C7E11AE522 /* Pods_IEBTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IEBTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,6 +131,7 @@
 		2F3448E61F68F73A00E3F383 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				1B89E3D822091C4B00A815D9 /* InformacaoEscolaPopupViewController.swift */,
 				2F39DE9B1F6B291500536B14 /* SocialViewController.swift */,
 				2F39DE9D1F6B292D00536B14 /* DetalhesSocialViewController.swift */,
 				2F39DE9F1F6B296300536B14 /* QuestionsViewController.swift */,
@@ -552,6 +555,7 @@
 				2F3C719B1F6B6C8D002663BE /* AlertaFactory.swift in Sources */,
 				2F3448E51F68E6E600E3F383 /* RatingControl.swift in Sources */,
 				2F458DC21F6B45C400C54725 /* Cenario.swift in Sources */,
+				1B89E3D922091C4B00A815D9 /* InformacaoEscolaPopupViewController.swift in Sources */,
 				2FCA84541F67707E001593D3 /* IEB.xcdatamodeld in Sources */,
 				2FCA844E1F67707E001593D3 /* ViewController.swift in Sources */,
 				1BEB0C86220739B500716B65 /* DadosDetalhesSocialTableViewController.swift in Sources */,

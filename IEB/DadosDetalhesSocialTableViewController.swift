@@ -237,12 +237,23 @@ class DadosDetalhesSocialTableViewController: UITableViewController, MKMapViewDe
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        let viewControllerDestino = segue.destination as! QuestionsViewController
-        
         if segue.identifier == "avaliacao"{
-            
+            let viewControllerDestino = segue.destination as! QuestionsViewController
             viewControllerDestino.objeto = objeto
             
+        }
+        if segue.identifier == "segueTransporte"{
+            //            let viewControllerDestino = segue.destination as! TransporteViewController
+            //            viewControllerDestino.objeto = Cenario(titulo: "Transporte", tituloAvaliacao: "Avaliação - Transporte", cenario: "transporte", entityName: "TransporteRespostas", user: "\(self.email!)")
+        }
+        if segue.identifier == "segueSaude"{
+            //            let tableViewControllerDestino = segue.destination as! DadosDetalhesSocialTableViewController
+            //            tableViewControllerDestino.objeto = Cenario(titulo: "Saúde", tituloAvaliacao: "Avaliação - Saúde", cenario: "saude", entityName: "SaudeRespostas", user: "\(self.email!)")
+        }
+        
+        if segue.identifier == "seguePopUp"{
+            let viewControllerDestino = segue.destination as! InformacaoEscolaPopupViewController
+            viewControllerDestino.objeto = Cenario(titulo: "Educação", tituloAvaliacao: "Avaliação - Educação", cenario:"educacao", entityName: "EducacaoRespostas", user: "\(self.objeto.user)")
         }
     }
     
@@ -352,7 +363,6 @@ class DadosDetalhesSocialTableViewController: UITableViewController, MKMapViewDe
         }
         task.resume()
     }
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
